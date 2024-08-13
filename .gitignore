@@ -1,0 +1,9 @@
+# Ignorar pasta vscode
+
+.vscode/*
+
+# Ignorar arquivos de texto
+
+*.pdf
+*.doc
+*.docx
