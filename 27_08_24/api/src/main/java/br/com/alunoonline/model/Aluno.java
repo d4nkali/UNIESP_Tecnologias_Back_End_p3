@@ -10,7 +10,6 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
@@ -19,9 +18,11 @@ public class Aluno implements Serializable{
 
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Id
-	private Long id;
+	private long id;
 
 	private String nome;
+
+	private String email;
 
 	private String cpf;
 
