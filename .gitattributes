@@ -1,0 +1,11 @@
+# Colocando sql como linguagem no github
+
+*.sql linguist-detectable=true
+*.sql linguist-language=sql
+
+# Convertendo para lf
+
+*.sql eol=lf
+*.java eol=lf
+*.md eol=lf
+*.txt eol=lf
