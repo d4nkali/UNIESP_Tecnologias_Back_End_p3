@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.DeleteMapping;
 
 @RestController
 @RequestMapping("/alunos")
@@ -39,6 +40,14 @@ public class AlunoController {
 	public Optional<Aluno> buscarAlunoPorId(@PathVariable Long id) {
 
 		return alunoService.buscarAlunoPorId(id);
+
+	}
+
+	@DeleteMapping("/{id}")
+	@ResponseStatus(HttpStatus.NO_CONTENT)
+	public void deletarAlunoPorId(@PathVariable Long id) {
+
+		alunoService.deletarAlunoPorId(id);
 
 	}
 
