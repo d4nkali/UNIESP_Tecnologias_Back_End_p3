@@ -49,4 +49,30 @@ O *service* contem as regras de negócios do repositório.
 - *@Autowired*: Permite a injeção do `AlunoRepository`.
 - *criarAluno(Aluno aluno)*: Salva o aluno no banco de dados.
 
-## Teste dos Request no Insomnia
+## Teste dos *Request* no **Insomnia**
+
+```json
+{
+	"nome": "Danilo",
+	"email": "exemplo@email.com",
+	"cpf": "1213231131-12"
+}
+```
+
+![Print do Teste no Insomnia](./imgs/print_insomnia.png)
+
+Retornou o status 201, indicando que o aluno foi criado e armazenado no banco de dados com sucesso.
+
+## Consulta no Banco de Dados
+
+### Informações sobre o Banco:
+
+- Banco de Dados: **PostgreSQL**.
+- Porta: 5432.
+- Software Gerenciamento de Bancos: **Dbeaver**.
+- Database: `aluno_online`.
+- URL: [jdbc:postgresql://localhost:5432/aluno_online](jdbc:postgresql://localhost:5432/aluno_online).
+
+![Print Consulta no Banco de Dados](./imgs/print_dbeaver.png)
+
+Apos executar a consulta `select * from public.aluno`, foi exibido os alunos criados apos os *request*.
