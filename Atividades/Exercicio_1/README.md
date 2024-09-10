@@ -1,26 +1,34 @@
-# Getting Started
+# Exercício 1
 
-### Reference Documentation
-For further reference, please consider the following sections:
+## API Aluno Online - criarAluno funcionando
 
-* [Official Apache Maven documentation](https://maven.apache.org/guides/index.html)
-* [Spring Boot Maven Plugin Reference Guide](https://docs.spring.io/spring-boot/3.3.3/maven-plugin)
-* [Create an OCI image](https://docs.spring.io/spring-boot/3.3.3/maven-plugin/build-image.html)
-* [Spring Web](https://docs.spring.io/spring-boot/docs/3.3.3/reference/htmlsingle/index.html#web)
-* [Spring Data JPA](https://docs.spring.io/spring-boot/docs/3.3.3/reference/htmlsingle/index.html#data.sql.jpa-and-spring-data)
+Projeto de uma **API** *RESTful* feito no ecossistema *Spring Boot* com o objetivo de gerenciar o cadastro de alunos, armazenando informações como nome, email, CPF e geração de um código identificador único, usando o a arquitetura **MVC** (Model-View-Controller).
 
-### Guides
-The following guides illustrate how to use some features concretely:
+## Estrutura do Projeto
 
-* [Building a RESTful Web Service](https://spring.io/guides/gs/rest-service/)
-* [Serving Web Content with Spring MVC](https://spring.io/guides/gs/serving-web-content/)
-* [Building REST services with Spring](https://spring.io/guides/tutorials/rest/)
-* [Accessing Data with JPA](https://spring.io/guides/gs/accessing-data-jpa/)
+### 1. *Controller*
 
-### Maven Parent overrides
+O *controller* lida com as **request** HTML para `aluno` e comunicar com o *service*.
 
-Due to Maven's design, elements are inherited from the parent POM to the project POM.
-While most of the inheritance is fine, it also inherits unwanted elements like `<license>` and `<developers>` from the parent.
-To prevent this, the project POM contains empty overrides for these elements.
-If you manually switch to a different parent and actually want the inheritance, you need to remove those overrides.
+#### Anotações em `AlunoController`:
 
+- *@RestController*: Define a classe como um controlador *RESTful*.
+- *@RequestMapping("/alunos")*: Define a rota `/alunos`.
+- *@PostMapping*: Mapeia requisições HTTP POST para o método `criarAluno()`.
+- *@RequestBody*: Converte o corpo da **request** para o objeto `Aluno`.
+- *@ResponseStatus(HttpStatus.CREATED)*: Retorna o status 201 (Created) após a criação do objeto `aluno` ser feita com sucesso.
+
+### 2. *Model* 
+
+O *model* ajuda a construir os atributos de `aluno`.
+
+#### Anotações em  `Aluno`:
+
+- *@Entity*: Marca a classe como uma entidade **JPA** e representa como uma tabela no banco de dados.
+- *@Id*: Define chave primária no banco.
+- *@GeneratedValue(strategy = GenerationType.IDENTITY)*: Gera automaticamente o valor da chave primária `id`.
+- *@NoArgsConstructor*: Gera um construtor sem parâmetros (*Lombok*).
+- *@AllArgsConstructor*: Gera um construtor com todos os parâmetros (*Lombok*).
+- *@Data*: Usa o *Lombok* para gerar métodos uteis.
+
+### 3.
