@@ -10,7 +10,7 @@ Projeto de uma **API** *RESTful* feito no ecossistema *Spring Boot* com o objeti
 
 O *controller* lida com as **request** HTML para `aluno` e comunicar com o *service*.
 
-#### Anotações em `AlunoController`:
+#### Annotations em `AlunoController`:
 
 - *@RestController*: Define a classe como um controlador *RESTful*.
 - *@RequestMapping("/alunos")*: Define a rota `/alunos`.
@@ -22,7 +22,7 @@ O *controller* lida com as **request** HTML para `aluno` e comunicar com o *serv
 
 O *model* ajuda a construir os atributos de `aluno`.
 
-#### Anotações em  `Aluno`:
+#### Annotations em  `Aluno`:
 
 - *@Entity*: Marca a classe como uma entidade **JPA** e representa como uma tabela no banco de dados.
 - *@Id*: Define chave primária no banco.
@@ -31,4 +31,22 @@ O *model* ajuda a construir os atributos de `aluno`.
 - *@AllArgsConstructor*: Gera um construtor com todos os parâmetros (*Lombok*).
 - *@Data*: Usa o *Lombok* para gerar métodos uteis.
 
-### 3.
+### 3. *Repository*
+
+O *repository* define a interface para interagir com o banco de dados.
+
+#### Annotation em `AlunoRepository`:
+
+- *@Repository*: Define a interface como um repositório de dados.
+
+### 4. *Service*
+
+O *service* contem as regras de negócios do repositório.
+
+#### Annotations em `AlunoService`:
+
+- *@Service*: Marca a classe como um serviço *Spring*.
+- *@Autowired*: Permite a injeção do `AlunoRepository`.
+- *criarAluno(Aluno aluno)*: Salva o aluno no banco de dados.
+
+## Teste dos Request no Insomnia
