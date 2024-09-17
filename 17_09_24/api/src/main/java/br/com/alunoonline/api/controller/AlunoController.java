@@ -9,8 +9,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.DeleteMapping;
+
 
 @RestController
 @RequestMapping("/alunos")
@@ -49,6 +48,12 @@ public class AlunoController {
 
 		alunoService.deletarAlunoPorId(id);
 
+	}
+
+	@PutMapping("/{id}")
+	@ResponseStatus(HttpStatus.NO_CONTENT)
+	public void atualizarAlunoPorID(@PathVariable Long id, @RequestBody Aluno aluno) {
+		alunoService.atualizarAlunoPorID(id, aluno);
 	}
 
 }
