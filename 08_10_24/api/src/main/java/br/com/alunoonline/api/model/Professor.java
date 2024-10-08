@@ -20,7 +20,6 @@ public class Professor implements Serializable{
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
 
-
 	private String nome;
 
 	private String email;

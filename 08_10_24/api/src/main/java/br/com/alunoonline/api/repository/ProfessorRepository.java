@@ -7,6 +7,6 @@ import br.com.alunoonline.api.model.Professor;
 
 
 @Repository
-public interface ProfessorRepository extends JpaRepository<Professor,Long>{
+public interface ProfessorRepository extends JpaRepository<Professor, Long>{
 
 }
