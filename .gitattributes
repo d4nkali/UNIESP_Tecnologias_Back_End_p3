@@ -3,6 +3,9 @@
 *.sql linguist-detectable=true
 *.sql linguist-language=sql
 
+*.json linguist-detectable=true
+*.json linguist-language=json
+
 # Convertendo para lf
 
 *.sql eol=lf
