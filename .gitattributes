@@ -5,7 +5,7 @@
 
 # Ignorando shel na contagem de script
 
-*.sh linguist-ventored=false
+*.sh linguist-vendored
 
 # Convertendo para lf
 
