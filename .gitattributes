@@ -3,8 +3,9 @@
 *.sql linguist-detectable=true
 *.sql linguist-language=sql
 
-#*.json linguist-detectable=true
-#*.json linguist-language=json
+# Ignorando shel na contagem de script
+
+*.sh linguist-ventored=false
 
 # Convertendo para lf
 
