@@ -1,0 +1,1 @@
+[{"id":1,"nome":"Backend 1","professor":{"id":4,"nome":"Kelson","email":"exemplo@email.com","cpf":"1354543121-12"}},{"id":2,"nome":"Banco 1","professor":{"id":5,"nome":"Wudson","email":"exemplo@email.com","cpf":"2123231342-12"}},{"id":3,"nome":"Analise","professor":{"id":6,"nome":"Glaucio","email":"exemplo@email.com","cpf":"2123231342-12"}}]
