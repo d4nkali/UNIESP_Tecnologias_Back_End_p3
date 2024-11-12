@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
+import br.com.alunoonline.api.dtos.AtualizarNotasRequest;
 import br.com.alunoonline.api.model.MatriculaAluno;
 import br.com.alunoonline.api.service.MatriculaAlunoService;
 
@@ -33,6 +34,14 @@ public class MatriculaAlunoController {
 	public void trancarMatricula(@PathVariable Long id) {
 
 		matriculaAlunoService.trancarMatricula(id);
+
+	}
+
+	@PatchMapping("/atualiza-notas/{id}")
+	@ResponseStatus(HttpStatus.NO_CONTENT)
+	public void atualizarNotas(@RequestBody AtualizarNotasRequest atualizarNotasRequest, @PathVariable Long id){
+
+		matriculaAlunoService.atualizarNotas(id, atualizarNotasRequest);
 
 	}
 
