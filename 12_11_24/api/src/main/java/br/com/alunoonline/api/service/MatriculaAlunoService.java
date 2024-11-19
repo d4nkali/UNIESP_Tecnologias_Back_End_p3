@@ -1,11 +1,14 @@
 package br.com.alunoonline.api.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
 import br.com.alunoonline.api.dtos.AtualizarNotasRequest;
+import br.com.alunoonline.api.dtos.HistoricoAlunoResponse;
 import br.com.alunoonline.api.enuns.MatriculaAlunoStatusEnum;
 import br.com.alunoonline.api.model.MatriculaAluno;
 import br.com.alunoonline.api.repository.MatriculaAlunoRepository;
@@ -95,6 +98,20 @@ public class MatriculaAlunoService {
 			MatriculaAlunoStatusEnum.REPROVADO);
 
 		}
+
+	}
+
+	public HistoricoAlunoResponse emitirHistorico(Long alunoId) {
+
+		List<MatriculaAluno> matriculasDoAluno = matriculaAlunoRepository.findByAlunoId(alunoId);
+
+		if (matriculasDoAluno.isEmpty()){
+
+			throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Esse aluno não possui matriculas");
+
+		}
+
+		return null; // Temporário
 
 	}
 
