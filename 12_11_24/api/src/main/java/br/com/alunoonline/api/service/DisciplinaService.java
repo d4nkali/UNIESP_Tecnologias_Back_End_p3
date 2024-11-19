@@ -23,6 +23,12 @@ public class DisciplinaService {
 
 	}
 
+	public List<Disciplina> listarDisciplinasDoProf(Long professorId) {
+
+		return disciplinaRepository.findByProfessorId(professorId);
+
+	}
+
 	public List<Disciplina> listarTodosDisciplinas() {
 
 		return disciplinaRepository.findAll();
