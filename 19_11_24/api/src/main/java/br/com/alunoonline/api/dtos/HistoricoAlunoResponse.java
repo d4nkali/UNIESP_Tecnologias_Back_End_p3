@@ -11,7 +11,6 @@ public class HistoricoAlunoResponse {
 	private String nomeAluno;
 	private String emailAluno;
 	private String cpfAluno;
-
-	private List<DisciplinaAlunoResponse> disciplinaAlunoResponses;
+	private List<DisciplinasAlunoResponse> disciplinasAlunoResponses;
 
 }
